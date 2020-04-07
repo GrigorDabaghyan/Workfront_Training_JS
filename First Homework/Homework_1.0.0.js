@@ -197,17 +197,18 @@ if (n % 3 === 0 && n % 10 === 1) {
 
 //14. Insert a digit and a number. Check whether the digits contains in the number or not.
 function checkDigitOfNumber(digit, num) {
+    let lastDigit = num % 10;
     while (num > 0) {
-        if (num % 10 === digit) {
-            num = Math.floor(num / 10);
+        num = Math.floor(num / 10)
+        if (lastDigit === digit || digit === num){
+            return "Yes"
         }
-        return "Yes";
-    }
-    return "No";
 
+
+    }return "No";
 }
 
-//console.log(checkDigitOfNumber(2, 31111111111111111))
+console.log(checkDigitOfNumber(2, 0))
 
 
 //15. Enter a number. Reverse its first and last digits. Print the new number.
