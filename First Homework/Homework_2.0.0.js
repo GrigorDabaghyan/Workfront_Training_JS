@@ -1,10 +1,11 @@
+
 //1.Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
 
 function isPrimeNumber(num) {
     if (num <= 1 || isNaN(num)){
         return "Number is wrong";
     }
-    for (let i=2; i < num-1; i++ ){
+    for (let i=2; i < Math.sqrt(num)-1; i++ ){
         if (num % i === 0){
             return "no";
         }
@@ -13,13 +14,13 @@ function isPrimeNumber(num) {
 }
 //console.log(isPrimeNumber(NaN))
 
-//Given a number n ( n>= 0 ). Print nth Fibonacci number.  (Fibonacci series: 0, 1, 1, 2, 3, 5, 8 …, ak = ak-1 + ak-2)
+//2.Given a number n ( n>= 0 ). Print nth Fibonacci number.  (Fibonacci series: 0, 1, 1, 2, 3, 5, 8 …, ak = ak-1 + ak-2)
 function lastFibonacciNumber(num) {
     let a = 0, b = 1, c;
     if (num < 0 || isNaN(num)){
         return "Number is wrong";
     }
-    for (let i = 1; i < num; i++){
+    for (let i = 2; i < num; i++){
          c = a + b;
          a = b;
          b = c;
@@ -28,7 +29,7 @@ function lastFibonacciNumber(num) {
 
 }
 
-//console.log(lastFibonacciNumber(20))
+console.log(lastFibonacciNumber(5))
 
 //3.Given a number n( n> 0 ). Print Fibonacci series up to n.
 function allFibonacciNumbers(num) {
