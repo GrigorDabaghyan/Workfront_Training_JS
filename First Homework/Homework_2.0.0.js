@@ -115,3 +115,25 @@ function findIndexOfSecondMaxNumberOfArray(arr) {
     return arr[arr.length-2];
 }
 console.log(findIndexOfSecondMaxNumberOfArray([5,4,3,2,1]));
+
+
+function repeatingArrayByPadding(arr, padAmount, repeat) {
+    if (padAmount>arr.length){
+        return "Invalid padding amount"
+    }
+    let firstPartOfArray = [];
+    let lastPartOfArray = [];
+    for (let k = 0; k < repeat; k++){
+        for (let i = 0; i < padAmount; i++){
+            firstPartOfArray.push(arr[i]);
+        }
+        for (let j = arr.length-padAmount; j < arr.length; j++){
+            lastPartOfArray.push(arr[j]);
+        }
+    }
+
+        return "" + firstPartOfArray + "," + arr + "," + lastPartOfArray
+
+}
+
+console.log(repeatingArrayByPadding([1], 2, 3));
